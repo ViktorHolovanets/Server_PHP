@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('poster')->nullable();
             $table->string('text')->nullable();
             $table->unsignedBigInteger('genre_id')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('user_id')->nullable();
             $table->unsignedBigInteger('playlist_id')->nullable();
 
             $table->timestamps();

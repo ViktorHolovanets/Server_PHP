@@ -22,6 +22,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
@@ -35,6 +36,8 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password',
         'remember_token',
+        'email',
+        'role_id',
     ];
     /**
      * The attributes that should be cast.
@@ -43,6 +46,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'id'=>'string'
     ];
     public function role(){
         return $this->belongsTo(Role::class);

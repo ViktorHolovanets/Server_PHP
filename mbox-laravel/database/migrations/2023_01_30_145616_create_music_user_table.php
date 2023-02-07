@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('music_user', function (Blueprint $table) {
             $table->unsignedBigInteger('music_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_id');
         });
     }
 

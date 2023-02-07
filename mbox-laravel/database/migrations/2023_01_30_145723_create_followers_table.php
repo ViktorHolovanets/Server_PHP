@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('followers', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('follower_id');
-            $table->unsignedBigInteger('leader_id');
+            $table->string('follower_id');
+            $table->string('leader_id');
 
             $table->foreign('follower_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('leader_id')->references('id')->on('users')->onDelete('cascade');

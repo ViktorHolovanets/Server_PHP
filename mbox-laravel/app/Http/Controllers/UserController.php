@@ -16,14 +16,12 @@ class UserController extends Controller
     }
     public function index()
     {
-        $user = Auth::user()->makeHidden(['id','role_id']);
+        $user = Auth::user()->makeVisible(['email',]);
         $followers = $user->followers()
-            ->makeHidden(['id','role_id','email'])
             ->offset(0)
             ->limit(5)
             ->get() ?? '';
         $followings = $user->followings()
-            ->makeHidden(['id','role_id','email'])
             ->offset(0)
             ->limit(5)
             ->get() ?? '';

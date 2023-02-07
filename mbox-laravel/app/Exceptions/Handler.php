@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use App\Lib\Response\Error;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class Handler extends ExceptionHandler

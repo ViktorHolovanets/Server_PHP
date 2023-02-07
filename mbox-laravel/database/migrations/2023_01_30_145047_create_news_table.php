@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('content');
             $table->string('img')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_id');
             $table->enum('status', ['news', 'poster'])->default('news');
             $table->timestamps();
         });

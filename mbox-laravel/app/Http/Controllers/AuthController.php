@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -53,6 +54,7 @@ class AuthController extends Controller
         ]);
 
         $user = User::create([
+            'id'=>Str::uuid()->toString(),
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
